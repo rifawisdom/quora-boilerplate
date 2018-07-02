@@ -1,2 +1,24 @@
 <h1>Quora Clone</h1>
-<%= "Welcome #{@name}!" %>
+<%= "Welcome !" %><br>
+<%= "This is the home page" %><br>
+
+
+<!-- <a href="/sign_up">Sign Up</a>
+<a href="/sign_in">Sign In</a>
+<a href="/sign_out">Sign Out</a>
+ -->
+<h3>Post Your Question</h3>
+<form action="/question" method="POST">
+	<input placeholder="write question here" name="question[description]" id= "soalan">
+	<input type="submit" value="post">
+</form>
+
+<%Question.all.each do |y|%>
+
+<li><a href="/question/<%= y.id %>"><%= y.description %> </a></li>
+<%end%>
+
+
+
+
+	

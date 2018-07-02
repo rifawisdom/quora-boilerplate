@@ -10,6 +10,16 @@
   </head>
   <body>
 
+  <%if current_user %>
+  <%= current_user.email %>
+  <a href="/">Home</a>
+  <a href="/sign_out">Sign Out</a>
+  <%else %>
+  <a href="/sign_up">Sign Up</a>
+  <a href="/sign_in">Sign In</a>
+<%end %>
+
+
     <%= yield %>
 
   </body>

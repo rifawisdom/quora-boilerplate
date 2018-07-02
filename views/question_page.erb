@@ -1,0 +1,10 @@
+<h2><%= @question.description%></h2>
+<p>By  <%= @question.user.email%></p>
+
+<% if  @question.user_id == current_user.id %>
+<form action="/question/<%= @question.id %>" method="POST">
+	 <input name="description" placeholder="<%= @question.description %>" /><br>
+    <input name="_method" type="hidden" value="patch" / ></br>
+    <input type=submit value="update" />
+</form>
+<%end%>
