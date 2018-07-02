@@ -1,0 +1,12 @@
+<h1>Welcome!!This is your identical Profile Page</h1>
+<%= "This is your email: #{@user.email}!" %>
+
+
+
+<h2>List of questions you've had asked</h2>
+
+
+<%@user.questions.all.each do |y|%>
+
+<li><a href="/question/<%= y.id %>"><%= y.description %> </a></li>
+<%end%>
